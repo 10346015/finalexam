@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><B>成績列表</B></h1>
+
+<%= link_to '新增學生', new_student_path %></p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>姓名</th>
+      <th>學號</th>
+      <th>分數</th>
+      <th>處理</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.number %></td>
+        <td>(<%= student.grade %>)</td>
+        <td><%= link_to '編輯', edit_student_path(student) %></td>
+        <td><%= link_to '刪除', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
