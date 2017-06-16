@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1><B>成績列表</B></h1>
-
-<%= link_to '新增學生', new_student_path , class: "btn btn-success" %></p>
+<div class="page-header"><h1><B>成績列表</B></h1><%= link_to '新增學生', new_student_path , class: "btn btn-success" %></p></div>
 
 分數級別說明：90分以上S / 80~89：A級 / 70~79：B級 / 60~69：C級 / 未滿60：D級
 
@@ -21,7 +19,8 @@
       <tr>
         <td><%= student.name %></td>
         <td><%= student.number %></td>
-        <td>(<%= student.grade %>)</td>
+        
+        <td><%=  do_classify(student) %>(<%= student.grade %>)</td>
         <td><%= link_to '編輯', edit_student_path(student), class: "btn btn-success btn-xs" %></td>
         <td><%= link_to '刪除', student, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger btn-xs"%></td>
       </tr>
