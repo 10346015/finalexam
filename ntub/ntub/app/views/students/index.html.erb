@@ -21,8 +21,8 @@
       <tr>
         <td><%= student.name %></td>
         <td><%= student.number %></td>
-        <%=  do_classify(student) %>
-        <td><%=  student.classify %>(<%= student.grade %>)</td>
+        
+        <td><%=  do_classify(student) %>(<%= student.grade %>)</td>
         <td><%= link_to '編輯', edit_student_path(student), class: "btn btn-success btn-xs" %></td>
         <td><%= link_to '刪除', student, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger btn-xs"%></td>
       </tr>
